@@ -54,8 +54,7 @@ fn criterion_benchmark(c: &mut Criterion) {
     
         "#,
         ).unwrap();
-        context.call_function("apply_rules", vec![event,rules]).unwrap();
-    
+        
         c.bench_function("quickjs_benchmark", |b| b.iter(|| context.call_function("apply_rules", vec![event,rules]).unwrap()));
 }
 
